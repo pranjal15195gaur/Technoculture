@@ -3,6 +3,7 @@ import { View, Text, StyleSheet,ScrollView } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { TextInput as PaperTextInput, Button } from "react-native-paper";
+import ButtonExample from "./Components/CVA_Component/Button";
 import tw from 'twrnc';
 
 
@@ -43,7 +44,7 @@ const App = () => {
   } = useForm();
 
   const onSubmit = (data:apartdata) => {
-    console.log("Form Data:", typeof(data.BaseBuildupRate));
+    console.log("Form Data:", typeof(data));
 
   };
 
@@ -423,8 +424,9 @@ type apartdata = z.infer<typeof schema>
 
 
       {/* Repeat the above Controller code for the remaining inputs */}
-
-      <Button onPress={handleSubmit(onSubmit)}>Calculate</Button>
+      <ButtonExample variant="secondary" size="md" onPress={handleSubmit(onSubmit)} >
+              Calculate
+            </ButtonExample>
     </View>
     </ScrollView>
   );
