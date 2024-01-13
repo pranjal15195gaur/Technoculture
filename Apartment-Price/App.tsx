@@ -6,6 +6,7 @@ import { TextInput as PaperTextInput, Button } from "react-native-paper";
 
 
 import tw from 'twrnc';
+import ButtonExample from "./Components/CVA_Component/Button";
 
 
 const schema = z.object({
@@ -424,9 +425,9 @@ type apartdata = z.infer<typeof schema>
       
 
 
-      {/* Repeat the above Controller code for the remaining inputs */}
-
-      <Button onPress={handleSubmit(onSubmit)}>Calculate</Button>
+     <ButtonExample variant="secondary" size="md" onPress={handleSubmit(onSubmit)}>
+              Calculate
+            </ButtonExample>
     </View>
     </ScrollView>
   );
